@@ -4,14 +4,23 @@ import styled from "styled-components";
 export default function Header(){
 
     const StyledHeader = styled.div`
-        img {
+        section img {
             width: 80px;
             height: 80px;
             border-radius: 50%
         }
 
+        header {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        header img {
+            width: 100%;
+        }
+
         .user-info {
-            margin-top: 50px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             width: 100%;
@@ -22,8 +31,9 @@ export default function Header(){
 
     return (
         <StyledHeader>
-            {/* <img src="banner"/> */}
-
+            <header>
+                <img src={config.banner}/>
+            </header>
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`}/>
                 <div>
