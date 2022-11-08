@@ -4,7 +4,7 @@ export default function Timeline(props) {
   const StyledTimeline = styled.div`
     flex: 1;
     width: 100%;
-    padding: 16px;
+    padding: 6px;
     overflow: hidden;
     h2 {
       font-size: 16px;
