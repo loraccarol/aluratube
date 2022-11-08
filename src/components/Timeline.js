@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Timeline(props) {
+export default function Timeline({ searchValue, ...props }) {
   const StyledTimeline = styled.div`
     flex: 1;
     width: 100%;
@@ -53,21 +53,43 @@ export default function Timeline(props) {
       {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName];
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video) => {
-                return (
-                  <a href={video.url}>
-                    <img src={video.thumb} />
-                    <span>{video.title}</span>
-                  </a>
-                );
-              })}
+              {videos
+                .filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const searchValueNormalized = searchValue.toLowerCase();
+                  return titleNormalized.includes(searchValueNormalized);
+                })
+                .map((video) => {
+                  return (
+                    <a  key={video.url} href={video.url}>
+                      <img src={video.thumb} />
+                      <span>{video.title}</span>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );
       })}
+
+      <div style={{ display: "flex" }}>
+        <h2>Favoritos</h2>
+        <div></div>
+        {props.favorites.map((fav) => {
+          return (
+            <a href="#" style={{ padding: "10px" }}>
+              <img
+                src={fav.img}
+                style={{ borderRadius: "100%", width: "80px", height: "80px" }}
+              />
+              <p>{fav.arroba}</p>
+            </a>
+          );
+        })}
+      </div>
     </StyledTimeline>
   );
 }

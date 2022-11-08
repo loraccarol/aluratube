@@ -20,7 +20,6 @@ export default function Header(){
         }
 
         .user-info {
-            margin-top: 20px;
             display: flex;
             align-items: center;
             width: 100%;
