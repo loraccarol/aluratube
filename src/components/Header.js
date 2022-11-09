@@ -4,6 +4,8 @@ import styled from "styled-components";
 export default function Header(){
 
     const StyledHeader = styled.div`
+        background-color: ${({ theme }) => theme.backgroundLevel1};
+
         section img {
             width: 80px;
             height: 80px;

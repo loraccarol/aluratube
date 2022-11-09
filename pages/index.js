@@ -1,4 +1,4 @@
-import { CSSReset } from "../src/components/CSSReset";
+
 import Header from "../src/components/Header";
 import Menu from "../src/components/Menu";
 import Timeline from "../src/components/Timeline";
@@ -11,7 +11,6 @@ export default function HomePage(){
 
     return (
         <>
-            <CSSReset/>
             <div>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />

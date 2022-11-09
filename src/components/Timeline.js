@@ -75,12 +75,12 @@ export default function Timeline({ searchValue, ...props }) {
         );
       })}
 
-      <div style={{ display: "flex" }}>
-        <h2>Favoritos</h2>
+      {/* <div style={{ display: "flex" }}>
+        <h2 style={{ paddingLeft: "16px" }}>Favoritos</h2>
         <div></div>
         {props.favorites.map((fav) => {
           return (
-            <a href="#" style={{ padding: "10px" }}>
+            <a key={props.favorites?.arroba} href="#" style={{ padding: "10px" }}>
               <img
                 src={fav.img}
                 style={{ borderRadius: "100%", width: "80px", height: "80px" }}
@@ -89,7 +89,7 @@ export default function Timeline({ searchValue, ...props }) {
             </a>
           );
         })}
-      </div>
+      </div> */}
     </StyledTimeline>
   );
 }
